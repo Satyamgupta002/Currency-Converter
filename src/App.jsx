@@ -22,7 +22,7 @@ function App() {
     return (
         <>
             <div className="w-full h-screen flex flex-col justify-center items-center bg-cover bg-no-repeat bg-[url('https://images.pexels.com/photos/7054384/pexels-photo-7054384.jpeg')]">
-                <h1 className='text-6xl m-8 font-bold bg-black p-2 pb-[17.5px] px-3 rounded-lg bg-opacity-50 text-white  border-white border-2'>Currency Converter</h1>
+                <h1 className='text-6xl m-8 font-bold bg-black p-2 pb-[17.5px] px-3 rounded-lg bg-opacity-50 text-white border-white border-2'>Currency Converter</h1>
                 <div className="w-full">
                     <div className="w-full h-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 bg-black bg-opacity-50">
                         <form
@@ -35,6 +35,7 @@ function App() {
                             <div className="w-full mb-1">
                                 <InputBox
                                     label="From"
+                                    inputLabel="Given Amount"
                                     amount={amount}
                                     currencyOptions={options}
                                     onCurrencyChange={(currency) => setFrom(currency)}
@@ -56,6 +57,7 @@ function App() {
                             <div className="w-full mt-1 mb-4">
                                 <InputBox
                                     label="To"
+                                    inputLabel="Converted Amount"
                                     amount={convertedAmount}
                                     currencyOptions={options}
                                     onCurrencyChange={(currency) => setTo(currency)}
