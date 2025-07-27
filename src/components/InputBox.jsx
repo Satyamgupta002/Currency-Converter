@@ -3,6 +3,7 @@ import React, {useId} from 'react'
 
 function InputBox({
     label,
+    inputLabel,
     amount,
     onAmountChange,
     onCurrencyChange,
@@ -21,13 +22,13 @@ function InputBox({
                 <label  
                     htmlFor={amountInputId}
                     className="text-black font-bold mb-2 inline-block">
-                    {label}
+                    {inputLabel}
                 </label>
                 <input
                     id={amountInputId}
-                    className="appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none outline-none w-full bg-transparent py-1.5"
+                    className="appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none outline-none w-full bg-transparent py-1.5 placeholder-black"
                     type="number"
-                    placeholder="Amount"
+                    placeholder="Enter Amount..."
                     disabled={amountDisable}
                     defaultValue={amount} 
                     value={amount}
@@ -37,9 +38,9 @@ function InputBox({
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">
-                <p className="text-black font-bold mb-2 w-full">Currency Type</p>
+                <p className="text-black font-bold mb-2 w-full">{label} Currency</p>
                 <select
-                    className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none border-black border-2"
+                    className="rounded-lg px-1 py-1 bg-gray-100 hover:bg-gray-300 cursor-pointer outline-none border-black border-2"
                     value={selectCurrency}
                     onChange={(e) =>onCurrencyChange&&onCurrencyChange(e.target.value)}
                     disabled={currencydDisable}
